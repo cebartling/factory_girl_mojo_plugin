@@ -1,4 +1,4 @@
-factory_girl_mojo_plugin
+FactoryGirl Mojo RubyMine plugin
 ========================
 
 A RubyMine plugin for pumping up your FactoryGirl mojo.
