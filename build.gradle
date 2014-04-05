@@ -1,0 +1,56 @@
+def junitVersion = '4.11'
+def spockVersion = '1.0-groovy-2.0-SNAPSHOT'
+def mockitoVersion = '1.9.5'
+def groovyVersion = '2.2.2'
+
+def appId = "factory_girl_mojo_plugin"
+def appEmail = "chris.bartling@gmail.com"
+
+apply plugin: 'base'
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:${junitVersion}"
+    testCompile "org.mockito:mockito-all:${mockitoVersion}"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile "org.spockframework:spock-core:${spockVersion}"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            srcDir 'src/test/resources'
+        }
+    }
+}
+
+
+
+
